@@ -1,0 +1,84 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { GraduationCap, Building2, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* NAVBAR */}
+      <nav className="flex items-center justify-between px-8 py-4 bg-white shadow-sm">
+        <h1 className="text-2xl font-bold">EduPlace</h1>
+        <div className="space-x-4">
+          <Button variant="outline">Login</Button>
+          <Button>Register</Button>
+        </div>
+      </nav>
+
+      {/* HERO SECTION */}
+      <section className="px-8 py-20 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-6"
+        >
+          Centralized Student Placement Platform
+        </motion.h2>
+
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          Helping students secure placements efficiently while enabling
+          institutions to manage admissions transparently and securely.
+        </p>
+
+        <div className="space-x-4">
+          <Button className="text-lg px-6 py-5">Apply Now</Button>
+          <Button variant="outline" className="text-lg px-6 py-5">
+            Explore Programs
+          </Button>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="grid md:grid-cols-3 gap-6 px-8 pb-20">
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-6 text-center">
+            <GraduationCap className="mx-auto mb-4" size={40} />
+            <h3 className="text-xl font-semibold mb-2">For Students</h3>
+            <p className="text-gray-600">
+              Apply to multiple institutions, track your placement status, and
+              receive real-time updates.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-6 text-center">
+            <Building2 className="mx-auto mb-4" size={40} />
+            <h3 className="text-xl font-semibold mb-2">For Institutions</h3>
+            <p className="text-gray-600">
+              Manage program capacity, review assigned students, and streamline
+              admissions.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-6 text-center">
+            <ShieldCheck className="mx-auto mb-4" size={40} />
+            <h3 className="text-xl font-semibold mb-2">Secure & Transparent</h3>
+            <p className="text-gray-600">
+              Built with security and fairness at the core to ensure trustworthy
+              placement outcomes.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-white py-6 text-center text-gray-500">
+        © {new Date().getFullYear()} EduPlace. All rights reserved.
+      </footer>
+    </div>
+  );
+}
